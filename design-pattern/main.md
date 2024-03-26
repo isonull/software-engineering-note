@@ -1,4 +1,0 @@
-# Design Pattern
-
-## Proxy Pattern
-
