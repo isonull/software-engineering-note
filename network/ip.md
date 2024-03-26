@@ -51,3 +51,15 @@ What IP does NOT provide:
 |                    | Destination IP Address | Destination IP address           | 128        | 32       |
 |                    | Options                | Options                          | ?          | ?        |
 |                    | Padding                | Ensure header 32-bit alignment   | ?          | ?        |
+
+## Broadcast
+
+The following C code defines how to get a broadcast address for a IP address and
+its subnet mask.
+
+```C
+uint32_t ip_addr; // IP address
+uint32_t net_mask; // subnet mask
+uint32_t net_addr = ip_addr | net_mask;
+uint32_t bc_addr = net_addr | ~ net_mask;
+```

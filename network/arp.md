@@ -29,3 +29,17 @@ On routers
 | 18          | Receiver hardware address |
 | 24          | Receiver protocol address |
 | 28          |                           |
+
+## ARP Operation
+
+| Code | Operation       | Fetch |
+| ---- | --------------- | ----- |
+| 1    | REQUEST         | THA   |
+| 2    | REPLY           |       |
+| 3    | REVERSE REQUEST | SPA   |
+| 4    | REVERSE REPLY   |       |
+| 8    | INVERSE REQUEST | TPA   |
+| 9    | INVERSE REPLY   |       |
+
+RARP is obsolete, which was replaced by BOOTP, which was later superseded by the
+Dynamic Host Configuration Protocol (DHCP).

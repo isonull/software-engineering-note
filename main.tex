@@ -1,0 +1,112 @@
+\documentclass[oneside,reqno]{amsbook} 
+
+\input{../header.tex}
+\title{Database}
+\author{Zijun Yan} 
+
+\begin{document}
+\maketitle
+
+\part{Database}
+
+\chapter{Object Relational Mapping}
+
+Transient - an instance that's not in a session, and is not saved to the
+database; i.e. it has no database identity. The only relationship such an object
+has to the ORM is that its class has a Mapper associated with it. 
+
+Pending - when you Session.add() a transient instance, it becomes pending. It
+still wasn't actually flushed to the database yet, but it will be when the next
+flush occurs. 
+
+Persistent - An instance which is present in the session and has a record in the
+database. You get persistent instances by either flushing so that the pending
+instances become persistent, or by querying the database for existing instances
+(or moving persistent instances from other sessions into your local session).
+
+Deleted - An instance which has been deleted within a flush, but the transaction
+has not yet completed. Objects in this state are essentially in the opposite of
+“pending” state; when the session's transaction is committed, the object will
+move to the detached state. Alternatively, when the session's transaction is
+rolled back, a deleted object moves back to the persistent state.
+
+Changed in version 1.1: The 'deleted' state is a newly added session object
+state distinct from the 'persistent' state.
+
+Detached - an instance which corresponds, or previously corresponded, to a
+record in the database, but is not currently in any session. The detached object
+will contain a database identity marker, however because it is not associated
+with a session, it is unknown whether or not this database identity actually
+exists in a target database. Detached objects are safe to use normally, except
+that they have no ability to load unloaded attributes or attributes that were
+previously marked as “expired”.
+
+\chapter{Transaction}
+
+Transaction isolation level
+
+\chapter{Pitfall}
+
+Lacking index on column with delete/update trigger may significantly slow down operations.
+
+\chapter{Hadoop}
+
+\chapter{Spark}
+
+Software as a service (SaaS)
+
+\part{Web}
+
+Node.js
+
+React.js Angular.js Vue.js
+
+
+\part{Concurrency}
+ABA problem
+Optimistic vs. Pessimistic locking
+
+\part{Crytography}
+
+blockchain
+oracle
+smart contract
+crytoconcurrency
+trust minimised aggrement
+
+sybil resistance mechanisms:
+proof of work
+proof of stake
+
+51\% attack
+
+gas price
+
+\begin{itemize}
+\item Immutable
+\item Decentralised
+\item Transparent
+\end{itemize}
+
+Public key
+Private key
+Address
+
+\part{Internet}
+
+\chapter{NAPT}
+
+Full cone NAT
+Address restricted cone NAT
+Port restricted cone NAT
+Symmetric NAT
+
+\chapter{STUN RFC3489}
+
+
+
+\part{Storage}
+
+RAID
+
+\end{document}
